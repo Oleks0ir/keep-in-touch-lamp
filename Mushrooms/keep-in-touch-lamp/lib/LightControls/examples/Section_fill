@@ -10,8 +10,3 @@ void setup() {
     lights.setAllHexColorInArray(0, 2, 0x99ff33);
     lights.setAllHexColorInArray(3, 4, 0x090057);
 }
-
-void loop() {
-  
-
-}
