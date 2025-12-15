@@ -1,17 +1,9 @@
 #include <Arduino.h>
-#include <LightControls.h>
 
-LightControls lights(5, 2);  // 10 LEDs, pin D4 (GPIO2)
+void setup(){
 
-
-void setup() {
-    lights.cycling = true;
-    lights.begin();
-    lights.setAllHexColorInArray(0, 2, 0x99ff33);
-    lights.setAllHexColorInArray(3, 4, 0x090057);
 }
 
-void loop() {
-  
-
+void loop(){
+    
 }
