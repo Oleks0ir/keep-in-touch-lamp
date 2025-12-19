@@ -1,0 +1,32 @@
+#include <Arduino.h>
+#include <WireSensor.h>
+
+SensorButton button(4);   // GPIO4 (ESP8266 D2)
+
+void setup() {
+    Serial.begin(115200);
+
+    pinMode(LED_BUILTIN, OUTPUT);
+
+    // Optional but recommended for ESP8266 testing
+    // WiFi.mode(WIFI_OFF);
+
+    button.init();
+
+    Serial.print("Baseline discharge time: ");
+    Serial.println(button.t_norm);
+}
+
+void loop() {
+    button.update();
+
+    // LED logic (invert if needed on your board)
+    digitalWrite(LED_BUILTIN, button.touching);
+
+    Serial.print("t_disch: ");
+    Serial.print(button.t_disch);
+    Serial.print(" | touching: ");
+    Serial.println(button.touching);
+
+    delay(20);
+}
